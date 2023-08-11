@@ -12,10 +12,11 @@ services:
       - POSTGRES_USER=petclinic
       - POSTGRES_DB=petclinic
   webapp:
-    image: petclinic:3-PG
+    image: petclinic:4
     ports:
       - "8080:8080"
     environment:
+      - SPRING_PROFILES_ACTIVE=postgres
       - POSTGRES_URL=jdbc:postgresql://postgres:5432/
       - POSTGRES_USER=petclinic
       - POSTGRES_PASS=petclinic
